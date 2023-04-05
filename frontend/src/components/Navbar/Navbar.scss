@@ -1,0 +1,210 @@
+// We are using scss for styling and BEM for naming convention
+// ------------------------------------------------------------
+
+// Styling for the navbar
+.app__navbar {
+  width: 100%;
+
+  // Spacing the log and nav links
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+  // Enable blur effect in background
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  // Enable sticky navbar
+  position: fixed;
+  z-index: 2;
+}
+
+// Styling for the navbar logo
+.app__navbar-logo {
+  // Enable flexbox
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  // Target the image inside the logo
+  img {
+    // Set the width and height of the image
+    width: 90px;
+    height: 20px;
+
+    // Enable responsive design
+    @media screen and (min-width: 2000px) {
+      width: 180px;
+      height: 40px;
+    }
+  }
+}
+
+.app__navbar-links {
+  // Enable flexbox, by setting it to 1, it will take the remaining space
+  flex: 1;
+
+  // Enable flexbox in the child elements
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  list-style: none;
+
+  // Target the li elements inside the ul individually
+  li {
+    margin: 0 1rem;
+    cursor: pointer;
+
+    flex-direction: column;
+
+    // Style the div inside the li -- it displays the circle on the nav links
+    div {
+      width: 5px;
+      height: 5px;
+      background: transparent;
+      border-radius: 50%;
+
+      margin-bottom: 5px;
+    }
+
+    // Style the a tag inside the li
+    a {
+      color: var(--gray-color);
+      text-decoration: none;
+      flex-direction: column;
+
+      text-transform: uppercase;
+      font-weight: 500;
+
+      // Enable transition effect
+      transition: all 0.3s ease-in-out;
+
+      // Enable hover effect
+      &:hover {
+        color: var(--secondary-color);
+      }
+    }
+
+    // Enable hover effect for the div inside the li
+    &:hover {
+      div {
+        background: var(--secondary-color);
+      }
+    }
+  }
+
+  // Enable responsive design for when the screen is less than 900px
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.app__navbar-menu {
+  // The menu icon width and height
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: relative;
+
+  // Positioning using flexbox
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+
+  // The svg icon inside the menu icon
+  svg {
+    width: 70%;
+    height: 70%;
+    color: var(--white-color);
+  }
+
+  div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+
+    padding: 1rem;
+
+    width: 80%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+
+    // This is setting the background on the sliding menu which comes with some bubbles
+    background: url("../../assets/bgWhite.png");
+    background-color: var(--white-color);
+    background-size: cover;
+    background-repeat: repeat;
+
+    /* top box shadow */
+    box-shadow: 0px 0px 20px rgba(168, 168, 168, 0.15);
+
+    svg {
+      width: 35px;
+      height: 35px;
+      color: var(--secondary-color);
+      margin: 0.5rem 1rem;
+    }
+
+    // The links inside the menu
+    ul {
+      // Setting width and height of the links inside the menu
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+
+      // Positioning using flexbox
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+
+      // Styling individual links inside the menu
+      li {
+        margin: 1rem;
+
+        // Styling the a tag
+        a {
+          color: var(--gray-color);
+          text-decoration: none;
+          font-size: 1rem;
+          text-transform: uppercase;
+          font-weight: 500;
+
+          // Enabling transition effect of the color when we hover over the link
+          transition: all 0.3s ease-in-out;
+
+          // When we hover over the link, change the color
+          &:hover {
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+
+    // Make display none when the screen is less than 900px
+    @media screen and (min-width: 900px) {
+      display: none;
+    }
+  }
+
+  // Make display none when the screen is less than 900px
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+}
