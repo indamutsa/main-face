@@ -8,7 +8,6 @@ The project is built using the following technologies:
 
 - Sanity.io
 - React.js which will later be converted to Next.js
-- TailwindCSS
 
 ### Getting Started
 
