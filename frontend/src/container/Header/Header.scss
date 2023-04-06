@@ -1,8 +1,14 @@
 #home {
   position: relative;
+
+  // Background Image
   background: url("../../assets/bgIMG.png");
+
+  // This is to make the image cover the whole container
   background-size: cover;
   background-position: center;
+
+  // This is to repeat the background image
   background-repeat: repeat;
 
   // disable the default padding styles
@@ -23,19 +29,23 @@
 
   padding: 6rem 2rem 0rem;
 
+  // For devices with width greater than 2000px
   @media screen and (min-width: 2000px) {
     padding-top: 8rem;
   }
 
+  // For devices with width less than 1200px
   @media screen and (max-width: 1200px) {
     flex-direction: column;
   }
 
+  // For devices with width less than 450px
   @media screen and (max-width: 450px) {
     padding: 6rem 1rem 2rem;
   }
 }
 
+// The header that is saying hi micael
 .app__header-info {
   flex: 0.65;
   display: flex;
@@ -46,12 +56,14 @@
 
   margin: 0 2rem;
 
+  // For devices with width less than 1200px
   @media screen and (max-width: 1200px) {
     width: 100%;
     margin-right: 0rem;
   }
 }
 
+// The badge that says what I do
 .app__header-badge {
   width: 100%;
   display: flex;
@@ -65,7 +77,7 @@
     background: var(--white-color);
     border-radius: 15px;
     flex-direction: row;
-    width: auto;
+    // width: auto;
 
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
@@ -84,6 +96,7 @@
   span {
     font-size: 2.5rem;
 
+    // For devices with width greater than 2000px
     @media screen and (min-width: 2000px) {
       font-size: 5rem;
     }
@@ -104,6 +117,7 @@
   height: 100%;
   margin-left: 1rem;
 
+  // Styling individual images
   div {
     width: 100px;
     height: 100px;
@@ -112,14 +126,14 @@
     background: var(--white-color);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 
+    // For the 3 images that shows the technologies I use on the front page
     img {
       width: 60%;
       height: 60%;
     }
   }
 
-  // circles with different height & width
-
+  // Targeting the first child image
   div:nth-child(1) {
     width: 100px;
     height: 100px;
@@ -153,6 +167,7 @@
     }
   }
 
+  // For devices with width less than 1200px
   @media screen and (max-width: 1200px) {
     width: 100%;
     flex-direction: row;
@@ -165,6 +180,7 @@
   }
 }
 
+// Styling the main portfolio image
 .app__header-img {
   flex: 1;
   height: 100%;
@@ -174,12 +190,14 @@
   align-items: flex-end;
   position: relative;
 
+  // Placing the image at the back of the overlay circle
   img {
     width: 100%;
     object-fit: contain;
     z-index: 1;
   }
 
+  // Placing the overlay circle at the back of the image
   .overlay_circle {
     position: absolute;
     left: 0;

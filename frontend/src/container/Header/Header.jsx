@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// import { AppWrap } from "../../wrapper";
+import { AppWrap } from "../../wrapper";
 import { images } from "../../constants";
 import "./Header.scss";
 
@@ -74,5 +74,7 @@ const Header = () => (
   </div>
 );
 
-export default Header;
-// export default AppWrap(Header, "home");
+// export default Header;
+
+// Using high level component that wraps the component, this will help us inject other components like NavigationDots
+export default AppWrap(Header, "home");

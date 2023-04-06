@@ -75,3 +75,27 @@ We clear unnecessary files and folders and then we add these dependencies
 ```
 yarn add @sanity/client @sanity/image-url framer-motion node-sass react-icons
 ```
+
+To connect to sanity we need to create a client. We create a client.js file in the src folder and add the following code
+
+```
+import { createClient } from '@sanity/client'
+import imageUrlBuilder from '@sanity/image-url';
+
+export const client = createClient({
+    projectId: process.env.REACT_APP_SANITY_PROJECT_ID,
+    dataset: 'production',
+    apiVersion: '2023-04-06',
+    useCdn: true,
+    token: process.env.REACT_APP_SANITY_TOKEN,
+});
+
+const builder = imageUrlBuilder(client);
+
+# For the images urls
+export const urlFor = (source) => builder.image(source);
+```
+
+In terminal, we can run `sanity manage` to open the studio and create a new dataset. We can then create a new token and add it to the client.js file.
+
+We need to copy the project id, dataset, allow CROSS ORIGIN for localhost:3000 and create the token and copy it to the client.js file.
