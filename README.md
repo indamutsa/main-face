@@ -104,5 +104,6 @@ The deployment is pretty much easier:
 
 ```
 yarn build
+netlify init
 
 ```
