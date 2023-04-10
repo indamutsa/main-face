@@ -99,3 +99,10 @@ export const urlFor = (source) => builder.image(source);
 In terminal, we can run `sanity manage` to open the studio and create a new dataset. We can then create a new token and add it to the client.js file.
 
 We need to copy the project id, dataset, allow CROSS ORIGIN for localhost:3000 and create the token and copy it to the client.js file.
+
+The deployment is pretty much easier:
+
+```
+yarn build
+
+```
